@@ -1,0 +1,35 @@
+#---------------------------------------------------------
+# Author: Jared Mavis
+# Username: jmavis
+# Problem name: Simple Sort
+#---------------------------------------------------------
+
+import sys
+from decimal import Decimal
+
+#---------------------------------------------------------
+# Function definitions
+#---------------------------------------------------------
+def ParseLine(line):
+    """ Will split the line appart then sort it and print out the result"""
+    entries = [Decimal(x) for x in line.split(' ')]
+    entries.sort()
+    for x in entries:
+        sys.stdout.write(str(x) + " ")
+    print
+# end ParseLine()
+
+def ReadFile(file):
+    """ Reads in and parses the lines of the given file"""
+    for line in file.readlines():
+        line = line.rstrip() #remove endline
+        ParseLine(line)
+#end ReadFile()
+
+#---------------------------------------------------------
+# Running Test Cases
+#---------------------------------------------------------
+test_cases = open(sys.argv[1], 'r')
+ReadFile(test_cases)
+test_cases.close()
+
