@@ -1,2 +1,4 @@
-zero;two;five;seven;eight;four
-three;seven;eight;nine;two
+15.94;16.00
+17;16
+35;35
+45;50
